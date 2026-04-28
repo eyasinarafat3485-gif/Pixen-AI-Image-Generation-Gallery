@@ -1,9 +1,18 @@
 "use client";
-import { Button } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+  const userData= authClient.useSession();
+  const user= userData.data?.user;
+  console.log(user);
+
+  const handleSignOut= async()=>{
+    await authClient.signOut();
+  }
+  
   return (
     <div className="border-b px-2 md:px-25">
       <nav className=" flex justify-between items-center py-4 max-w-7xl mx-auto w-full">
@@ -35,14 +44,22 @@ const Navbar = () => {
         </ul>
 
         <div className="flex gap-4">
-          <ul className="flex items-center gap-4  text-sm">
+          {!user && <ul className="flex items-center gap-4  text-sm">
             <li>
-              <Link href={"/signup"}><Button className='btn rounded-md text-lg font-semibold bg-orange-500 hover:bg-orange-600 px-2 py-2'>SignUp</Button> </Link>
+              <Link href={"/signup"}><Button className='btn rounded-md text-lg font-semibold bg-pink-500 hover:bg-pink-600 p-2'>SignUp</Button> </Link>
             </li>
             <li>
-              <Link href={"/signin"}><Button className='btn rounded-md text-lg font-semibold bg-green-500 hover:bg-green-600 px-2 py-2'>SignIn</Button> </Link>
+              <Link href={"/signin"}><Button className='btn rounded-md text-lg font-semibold bg-green-500 hover:bg-green-600 p-2'>SignIn</Button> </Link>
             </li>
-          </ul>
+          </ul>}
+          {
+            user && <div className="flex gap-3"><Avatar>
+        <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
+        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+      </Avatar> 
+      <Button onClick={handleSignOut} className='bg-red-500 rounded-md btn hover:bg-red-600 text-lg font-semibold p-2'>Sign Out</Button>
+      </div>
+          }
         </div>
       </nav>
     </div>

@@ -12,6 +12,7 @@ import {
     TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export default function SignUpPage() {
@@ -42,6 +43,7 @@ export default function SignUpPage() {
         }
 
     };
+    
 
     return (
         <Card className="border mx-auto w-125 py-10 mt-5">
@@ -114,6 +116,7 @@ export default function SignUpPage() {
                     </Button>
                 </div>
             </Form>
+            
         </Card>
     );
 }
