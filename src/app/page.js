@@ -1,10 +1,11 @@
 import Banner from "@/components/Banner";
-import Image from "next/image";
+import TopGeneration from "@/components/TopGeneration";
 
 export default function Home() {
   return (
     <div>
       <Banner />
+      <TopGeneration />
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import { Button } from "@heroui/react";
 import Link from "next/link";
+// https://pixen-ai-image-generation-gallery.vercel.app/data.json
+// https://pixen-ai-image-generation-gallery.vercel.app/category.json
 
 const Banner = () => {
   return (
-    <div className="bg-[url('https://i.pinimg.com/1200x/8a/fe/83/8afe83b98f339de4c1dd34fde26a86d0.jpg')] h-[60vh] w-full bg-cover bg-no-repeat bg-center flex items-center rounded-lg shadow-2xl my-10">
+    <div className="bg-[url('https://i.pinimg.com/1200x/8a/fe/83/8afe83b98f339de4c1dd34fde26a86d0.jpg')] h-[70vh]  bg-cover bg-no-repeat bg-center flex items-center rounded-lg shadow-2xl my-10 w-[95%] md:w-[85%] mx-auto">
       {/* Overlay */}
       <div className="w-full h-full rounded-lg bg-black/50 flex items-center ">
         <div className="max-w-7xl mx-auto px-6 text-white">
