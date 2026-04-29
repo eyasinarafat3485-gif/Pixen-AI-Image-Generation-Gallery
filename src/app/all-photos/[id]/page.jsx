@@ -5,7 +5,7 @@ import { FaDownload, FaHeart } from 'react-icons/fa';
 const PhotoDetailsPage = async({params}) => {
     const {id}= await params;
 
-    const res= await fetch('http://localhost:3000/data.json')
+    const res= await fetch(`${process.env.BETTER_AUTH_URL}/data.json`)
     const photos= await res.json();
     
     const photo= photos.find(p=> p.id == id)
