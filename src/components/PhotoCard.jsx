@@ -20,7 +20,7 @@ const PhotoCard = ({ photo }) => {
 
             </div>
             <div>
-                <h2 className='font-bold text-lg'>{photo.title}</h2>
+                <h2 className='font-semibold text-2xl '>{photo.title}</h2>
             </div>
 
             <div className='flex justify-between'>

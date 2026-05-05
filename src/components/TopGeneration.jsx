@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoCard from './PhotoCard';
 
 const TopGeneration = async() => {
-    const res= await fetch(`${process.env.BETTER_AUTH_URL}/data.json`)
+    const res= await fetch('https://pixen-ai-image-generation-gallery.vercel.app//data.json')
     const photos= await res.json();
     // console.log(photos);
     const topPhotos= photos.slice(0, 8)

@@ -14,9 +14,7 @@ export async function proxy(request) {
         return NextResponse.redirect(new URL('/signin', request.url))
     }
 
-
 //   
-
 }
  
 export const config = {
